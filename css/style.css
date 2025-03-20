@@ -22,6 +22,11 @@ h5:hover {
     text-decoration-color: red;
 }
 
+h1:hover {
+    color: red;
+    text-decoration-color: red;
+}
+
 .trump-container {
     display: flex;
     flex-direction: column;
@@ -41,23 +46,65 @@ h5:hover {
     grid-template-columns: repeat(3, 1fr);
     position: relative;
     gap: 0% 3%;
+    grid-template-areas: 
+        "ukraine harris magazine"
+        "tesla moretext women"
+        "tallad gaza submit";
+}
+
+
+#ukraine {
+    grid-area: ukraine;
+}
+
+#harris {
+    grid-area: harris;
+}
+
+#magazine {
+    grid-area: magazine;
+}
+
+#tesla {
+    grid-area: tesla;
+}
+
+#moretext {
+    grid-area: moretext;
+}
+
+#women {
+    grid-area: women;
+}
+
+#tallad {
+    grid-area: tallad;
+}
+
+#gaza {
+    grid-area: gaza;
+}
+
+#submit {
+    grid-area: submit;
+}
+
+
+.img-grid section {
+    width: 100%;
+    padding: 10px 0px;
+    border-bottom: ..25px solid black;
+    border-top: .25px solid black; 
 }
 
 /* Line between rows */
 .img-grid img {
     width: 100%;
     height: auto;
+    max-width: 100%;
+    object-fit: contain;
     padding: 10px 0px;
 }
-
-.img-grid section {
-    width: 100%;
-    height: auto;
-    padding: 10px 0px;
-    border-bottom: .5px solid black;
-    border-top: .5px solid black; 
-}
-
 /* single long vertical line */
 .img-grid::after {
     content: "";
