@@ -1,3 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,100..900;1,100..900&display=swap');
+
 body {
     background-color: white;
+    text-decoration: underline;
+    font-family: 'Libre Franklin', sans-serif;
 }
+
+h1 {
+    width: 65%;
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1% 0% 3% 0%;
+}
+
+h5:hover {
+    color: red;
+    text-decoration-color: red;
+}
+
+.trump-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+}
+
+.fire-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.img-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    position: relative;
+    gap: 0% 3%;
+}
+
+/* Line between rows */
+.img-grid img {
+    width: 100%;
+    height: auto;
+    padding: 10px 0px;
+}
+
+.img-grid section {
+    width: 100%;
+    height: auto;
+    padding: 10px 0px;
+    border-bottom: .5px solid black;
+    border-top: .5px solid black; 
+}
+
+/* single long vertical line */
+.img-grid::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 33%; /* width first column */
+    width: .5px;
+    background: black;
+}
+
+.img-grid::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 67%; /* width second column */
+    width: .5px;
+    background: black;
+}
+
+
+
