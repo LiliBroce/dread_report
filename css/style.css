@@ -47,6 +47,7 @@ h1:hover {
     grid-auto-rows: min-content; /* Rows adjust based on content */
     column-gap: 3%; /* Space between grid items */
     row-gap: 0%;
+    margin-top: 5%;
   }
   
 .grid-item {
