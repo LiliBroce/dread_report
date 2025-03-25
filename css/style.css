@@ -46,13 +46,19 @@ h1:hover {
     grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
     grid-auto-rows: min-content; /* Rows adjust based on content */
     column-gap: 3%; /* Space between grid items */
-    row-gap: 0%;
+    row-gap: 0;
     margin-top: 5%;
   }
   
 .grid-item {
-    text-align: left;
+    text-align: left;    
+    border-right: 1px solid black;
+    padding-right: 5%;
   }
+
+.grid-item:last-child {
+    border-right: none;
+}
 
 .grid-item img {
     width: 40%;
@@ -62,8 +68,9 @@ h1:hover {
     border: none;
     height: 1px;
     background-color: black;
-    width: 100%;
-    margin: 10px 0;
+    width: 95%;
+    margin: 10px 0px;
+    align-content: center;
 }
 
 /* Pop-up container (hidden by default) */
