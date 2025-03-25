@@ -44,6 +44,7 @@ h1:hover {
 .img-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto;
     position: relative;
     gap: 0% 3%;
     grid-template-areas: 
@@ -126,5 +127,108 @@ h1:hover {
     background: black;
 }
 
+/* Pop-up container (hidden by default) */
+.popup {
+    display: flex;
+    position: fixed;  /* Use fixed to keep pop-ups within the viewport */
+    z-index: 9999;
+    animation: fadeIn 1s ease;
+    width: auto;
+    height: auto;
+}
 
+/* Pop-up content */
+.popup-content {
+    background: white;
+    padding: 20px;    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    width: 60vh; /* 80% of the viewport width */
+    max-width: 450px; /* Max width to ensure it doesn't get too large */
+    height: auto;
+    max-height: 80vh; /* Max height to ensure it doesn't exceed 80% of the viewport height */
+    position: relative;
+    z-index: 10000;
+    box-sizing: border-box;
+}
 
+.popup-content:hover { /* me */
+    transform: scale(1.05);
+}
+
+/* Close button */
+.close-btn {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+/* Change close button color on hover */
+.close-btn:hover {
+    color: red;
+}
+
+/* Main message styling */
+.main-message {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+/* Button message (clickable text) */
+.popup-button-text {
+    font-size: 16px;
+    color: #00ccff;
+    cursor: pointer;
+    font-weight: bold;
+    text-decoration: underline;
+    margin-top: 10px;
+    text-align: center;
+}
+
+/* Hover effect for the clickable button text */
+.popup-button-text:hover {
+    color: #ff6600;
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+/* Responsive adjustments for smaller screens */
+@media screen and (max-width: 768px) {
+    .popup-content {
+        width: 90vw; /* Make pop-ups wider on mobile devices */
+        max-width: 300px;
+        padding: 8px;
+    }
+
+    .popup-message {
+        font-size: 1rem;
+    }
+
+    .close-btn {
+        font-size: 1.2rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .popup-content {
+        width: 95vw; /* Pop-ups will take up nearly the entire screen on small devices */
+        max-width: 250px;
+        padding: 5px;
+    }
+
+    .popup-message {
+        font-size: 0.9rem;
+    }
+
+    .close-btn {
+        font-size: 1rem;
+    }
+}
