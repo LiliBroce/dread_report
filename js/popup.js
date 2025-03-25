@@ -92,3 +92,27 @@ document.addEventListener("DOMContentLoaded", function () {
         window.close();
     }, 180000);  // 3 minutes = 180,000 milliseconds
 });
+
+
+function updateTime() {
+    // Display Local Time
+    const now = new Date();
+    const hours = now.getHours().toString().padStart(2, '0');
+    const minutes = now.getMinutes().toString().padStart(2, '0');
+    const seconds = now.getSeconds().toString().padStart(2, '0');
+    document.getElementById("local-time").textContent = `${hours}:${minutes}:${seconds}`;
+
+    // Calculate and Display Elapsed Time (starting from 37 hours)
+    const startTime = 37 * 3600; // 37 hours in seconds
+    const elapsedTime = Math.floor((Date.now() - pageLoadTime) / 1000) + startTime;
+    const elapsedHours = Math.floor(elapsedTime / 3600).toString().padStart(2, '0');
+    const elapsedMinutes = Math.floor((elapsedTime % 3600) / 60).toString().padStart(2, '0');
+    const elapsedSeconds = (elapsedTime % 60).toString().padStart(2, '0');
+    document.getElementById("elapsed-time").textContent = `${elapsedHours}:${elapsedMinutes}:${elapsedSeconds}`;
+}
+
+const pageLoadTime = Date.now(); // Capture when the page loads
+
+setInterval(updateTime, 1000); // Update every second
+
+updateTime(); // Initial call to prevent delay

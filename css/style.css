@@ -41,90 +41,28 @@ h1:hover {
     text-align: center;
 }
 
-.img-grid {
+.grid-container {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: auto;
-    position: relative;
-    gap: 0% 3%;
-    grid-template-areas: 
-        "ukraine harris magazine"
-        "tesla moretext women"
-        "tallad gaza submit";
+    grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
+    grid-auto-rows: min-content; /* Rows adjust based on content */
+    column-gap: 3%; /* Space between grid items */
+    row-gap: 0%;
+  }
+  
+.grid-item {
+    text-align: left;
+  }
+
+.grid-item img {
+    width: 40%;
 }
 
-
-#ukraine {
-    grid-area: ukraine;
-}
-
-#harris {
-    grid-area: harris;
-}
-
-#magazine {
-    grid-area: magazine;
-}
-
-#tesla {
-    grid-area: tesla;
-}
-
-#moretext {
-    grid-area: moretext;
-}
-
-#women {
-    grid-area: women;
-}
-
-#tallad {
-    grid-area: tallad;
-}
-
-#gaza {
-    grid-area: gaza;
-}
-
-#submit {
-    grid-area: submit;
-}
-
-
-.img-grid section {
+.divider {
+    border: none;
+    height: 1px;
+    background-color: black;
     width: 100%;
-    padding: 10px 0px;
-    border-bottom: ..25px solid black;
-    border-top: .25px solid black; 
-}
-
-/* Line between rows */
-.img-grid img {
-    width: 100%;
-    height: auto;
-    max-width: 100%;
-    object-fit: contain;
-    padding: 10px 0px;
-}
-/* single long vertical line */
-.img-grid::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 33%; /* width first column */
-    width: .5px;
-    background: black;
-}
-
-.img-grid::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 67%; /* width second column */
-    width: .5px;
-    background: black;
+    margin: 10px 0;
 }
 
 /* Pop-up container (hidden by default) */
@@ -192,43 +130,4 @@ h1:hover {
 /* Hover effect for the clickable button text */
 .popup-button-text:hover {
     color: #ff6600;
-}
-
-/* Fade-in animation */
-@keyframes fadeIn {
-    0% { opacity: 0; }
-    100% { opacity: 1; }
-}
-
-/* Responsive adjustments for smaller screens */
-@media screen and (max-width: 768px) {
-    .popup-content {
-        width: 90vw; /* Make pop-ups wider on mobile devices */
-        max-width: 300px;
-        padding: 8px;
-    }
-
-    .popup-message {
-        font-size: 1rem;
-    }
-
-    .close-btn {
-        font-size: 1.2rem;
-    }
-}
-
-@media screen and (max-width: 480px) {
-    .popup-content {
-        width: 95vw; /* Pop-ups will take up nearly the entire screen on small devices */
-        max-width: 250px;
-        padding: 5px;
-    }
-
-    .popup-message {
-        font-size: 0.9rem;
-    }
-
-    .close-btn {
-        font-size: 1rem;
-    }
 }
