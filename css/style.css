@@ -17,12 +17,30 @@ h1 {
     padding: 1% 0% 3% 0%;
 }
 
+h1:hover {
+    color: red;
+    text-decoration-color: red;
+}
+
 h5:hover {
     color: red;
     text-decoration-color: red;
 }
 
-h1:hover {
+h2:hover {
+    color: red;
+    text-decoration-color: red;
+}
+
+a {
+    color: black;
+}
+
+a img {
+    
+}
+
+a:hover {
     color: red;
     text-decoration-color: red;
 }
