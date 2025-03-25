@@ -90,5 +90,5 @@ document.addEventListener("DOMContentLoaded", function () {
         
         // Close the current browser tab
         window.close();
-    }, 10000);  // 3 minutes = 180,000 milliseconds
+    }, 180000);  // 3 minutes = 180,000 milliseconds
 });
