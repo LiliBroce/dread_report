@@ -81,3 +81,14 @@ document.addEventListener("DOMContentLoaded", function () {
     // Start showing pop-ups after the first delay
     setTimeout(showPopup, delay);
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+    // Set a 3-minute (180,000 ms) timer
+    setTimeout(function() {
+        // Create a pop-up message saying "Goodbye"
+        alert("Time is up. Goodbye!");
+        
+        // Close the current browser tab
+        window.close();
+    }, 10000);  // 3 minutes = 180,000 milliseconds
+});
