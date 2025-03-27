@@ -1,4 +1,4 @@
-/*
+
 
 document.addEventListener("DOMContentLoaded", function () {
     let closeBtn, popupMessage, buttonMessage;
